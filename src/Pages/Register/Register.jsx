@@ -1,49 +1,55 @@
 // import { useState } from "react";
+import { Formik } from 'formik';
+import * as yup from 'yup';
 import { useDispatch } from "react-redux";
 import authOperations from "redux/auth/auth-operations";
 
 
-import { Form, H2, Div, Label, Input, Button } from "./Register.styled"
+import { FormStyled, H2, Div, Label, Input, Button, ErrMessage } from "./Register.styled"
+
+const schema = yup.object().shape({
+    name: yup.string().max(15).required(),
+    email: yup.string().max(12).required(),
+    password: yup.string().min(4).max(12).required(),
+})
+
+const initialValues = {
+    name: '',
+    email: '',
+    password: '',
+};
 
 export const RegisterForm = () => {
     const dispatch = useDispatch();
-    // const [name, setName] = useState('');
-    // const [email, setEmail] = useState('');
-    // const [password, setPassword] = useState('');
-
-    // const handleChange = ({ target: {name, value }}) => {
-    //     console.log(name.value)
-       
-    //     setName(name.value);
-    //     setEmail(name.value);
-    //     setPassword(name.value);
-
-    // }
     
-    const handleSubmit = e => {
-        e.preventDefault();
-
-        const form = e.target;
-        // const name = form.name.value;
-        // const email = form.email.value;
-        // const password = form.password.value;
-        dispatch(authOperations.register({ name: form.name.value, email: form.email.value, password: form.password.value}));
-
-       form.reset();
-    }
+    const handleSubmit = (values, { resetForm }) => {
+        dispatch(
+            authOperations.register({
+            name: values.name,
+            email: values.email,
+            password: values.password,
+          })
+        );
+    
+        resetForm();
+      };
 
      return  (
-        <Form onSubmit={handleSubmit}>
+        <Formik 
+        initialValues={initialValues} 
+        validationSchema={schema}
+        onSubmit={handleSubmit} >
+            <FormStyled autoComplete="off">
             <H2>Registration</H2>
+            
             <Div>
             <Label htmlFor="name">Enter your name:</Label>
             <Input 
             type="text"
             name="name"
-            // value={name}
             placeholder="Name"
-            // onChange={handleChange}
             />
+            <ErrMessage name='name' component='div' /> 
             </Div>
             
             <Div>
@@ -51,30 +57,26 @@ export const RegisterForm = () => {
             <Input 
             type="email" 
             name='email'
-            // value={email}
-            // pattern=".+@\/" 
             size="30" 
             placeholder="email" 
             required
-            // onChange={handleChange}
             /> 
-            </Div> 
+            <ErrMessage name='name' component='div' /> 
+            </Div>
             
             <Div>
-            <Label htmlFor="password">Enter your password: </Label>
+            <Label htmlFor="password">Enter your password:</Label>
             <Input 
             type="password" 
             name="password"
-            // value={password}
-            minLength={6}
             placeholder="Password"
             required
-            // onChange={handleChange}
             />
+            <ErrMessage name='name' component='div' /> 
             </Div>
             
-           
             <Button type="submit">Register</Button>
-        </Form>
+            </FormStyled>
+        </Formik>
      )
 }

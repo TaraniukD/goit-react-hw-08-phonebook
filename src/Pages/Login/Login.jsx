@@ -24,10 +24,10 @@ export const LoginForm = () => {
         e.preventDefault();
 
         const form = e.target;
-        // const email = form.email.value;
-        // const password = form.password.value;
+        const email = form.email.value;
+        const password = form.password.value;
 
-        dispatch(authOperations.register({ email: form.email.value, password: form.password.value}));
+        dispatch(authOperations.register({ email, password }));
 
        form.reset();
     }

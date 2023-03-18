@@ -16,27 +16,13 @@ justify-content: space-between;
 margin: 8px;
 font-size: 22px;
 `
-export const NameP = styled.p`
+export const NameP = styled.span`
 margin: 0;
 min-width: 170px;
 `
+
 export const ListP = styled.p`
 margin: 0px;
-`
-export const IconButton = styled.button`
-border: 1px solid #e28743;
-border-radius: 5px;
-color: #e28743;
-cursor: pointer;
-&:hover,
-&:focus {
-    background-color: #eab676;
-    border: 1px solid #eab676;
-  }
-  &:active {
-    background-color: #eab676;
-    
-  }
 `
 
 export const Button = styled.button`
@@ -50,6 +36,5 @@ font-size: 15px;
 &:focus {
     background-color: #eab676;
     border: 1px solid #eab676;
-  };
- 
+  }
 `

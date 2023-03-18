@@ -1,36 +1,32 @@
 
 // import { useLocalStorage } from "../hooks/Hooks";
-import { ContactForm } from "components/ContactForm/ContactForm";
-import { Filter } from "components/Filter/Filter";
-import { ContactList } from "components/ContactList/ContactList";
-import {useSelector, useDispatch } from 'react-redux';
-import { useEffect } from "react";
-import { fetchContacts } from "redux/contacts/contactsOperations";
+import React from "react";
+import { Route, Routes, Navigate } from "react-router-dom";
+import { Header } from "./Header/Header";
+import { Phonebook } from "../Pages/Phonebook/Phonebook";
+import { FavoriteContactList } from "Pages/FavoriteContactList/FavoriteContactList";
+import { ErrorPage } from 'Pages/Error/Error';
+import { RegisterForm } from "Pages/Register/Register";
+import { LoginForm } from "Pages/Login/Login";
+import { PAGE_NAME } from "router/paths";
 
-import { Div, H1, H2, P } from "./App.styled";
+import { Div } from "./App.styled";
 
 export function App() {
    
-  const contacts = useSelector(state => state.contacts.contacts);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
+ 
 
   return (
-    
     <Div>
-      <H1>Phonebook</H1>
-      <ContactForm />
-      <H2>Contacts</H2>
-      {contacts.length > 0 ?
-       <>
-      <Filter />
-      <ContactList />
-       </> : 
-      <P>There are no saved contacts!</P>
-      }
+      <Header />
+      <Routes>
+        <Route path={PAGE_NAME.homepage} element={<Phonebook />} />
+        <Route path={PAGE_NAME.favoriteContacts} element={<FavoriteContactList />} />
+        <Route path={PAGE_NAME.register} element={<RegisterForm />} />
+        <Route path={PAGE_NAME.login} element={<LoginForm />} />
+        <Route path={PAGE_NAME.error} element={<ErrorPage />} />
+        <Route path="*" element={<Navigate to={PAGE_NAME.error} replace />} />
+      </Routes>
     </Div>
   );
 };

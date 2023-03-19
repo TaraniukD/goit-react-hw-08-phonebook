@@ -5,8 +5,8 @@ margin: 0 auto;
 width: 400px;
 border: 1px solid gray;
 border-radius: 8px;
-padding: 5px 20px 10px 20px;
-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); 
+padding: 5px 30px 10px 30px;
+box-shadow: 0px 5px 20px 8px rgba(0, 0, 0, 0.5);  
 `;
 
 export const Label = styled.label`

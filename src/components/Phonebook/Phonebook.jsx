@@ -2,9 +2,9 @@ import React from "react";
 import {deleteContact} from 'redux/contacts/contactsOperations'
 import {useSelector, useDispatch} from 'react-redux';
 
-import { ListUl, ListLi, NameP, ListP, Button } from "./FavoriteContactsList.styled";
+import { ListUl, ListLi, NameP, ListP, Button } from "./Phonebook.styled";
 
-export const FavoriteContacts = () => {
+export const Phonebook = () => {
     
     const contacts = useSelector(state => state.contacts.contacts);
     const filter = useSelector(state => state.filter)

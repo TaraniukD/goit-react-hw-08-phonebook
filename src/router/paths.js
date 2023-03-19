@@ -1,7 +1,7 @@
 
 export const PAGE_NAME = {
     homepage: '/',
-    favoriteContacts: '/favoriteContacts',
+    addContact: '/addContact',
     register: '/register',
     login: '/login',
     error: '/error',

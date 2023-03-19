@@ -4,7 +4,7 @@ export const Form = styled.form`
 position: relative;
 max-width: 400px;
 margin: 20px auto;
-padding: 30px;
+padding: 20px 30px;
 border: 1px solid #76b5c5;
 border-radius: 5px;
 text-align: center;
@@ -14,7 +14,7 @@ export const H2 = styled.h2`
 display: block;
 margin-bottom: 40px;
 font-size: 30px;
-color: #063970;
+color: #042f66;
 `
 
 export const Div = styled.div`
@@ -54,7 +54,7 @@ width: 140px;
 padding: 9px;
 text-align: center; 
 margin: 30px 0px;
-background-color: #abdbe3;
+background-color: rgba(177, 163, 196, 0.5);
 border: 1px solid #abdbe3;
 border-radius: 5px;
 font-size: 18px;
@@ -62,14 +62,15 @@ cursor: pointer;
 color: #154c79;
 &:hover,
  :focus {
-    background-color:#76b5c5;
-    border: 1px solid #76b5c5;
+    background-color: rgba(102, 44, 182, 0.5);
+    border: 1px solid rgba(102, 44, 182, 0.5);
+    color: rgb(237, 234, 241);
 }
 `
 export const PasswordDiv = styled.div`
 cursor: pointer;
 position: absolute;
 right: 85px;
-bottom: 158px;
+bottom: 150px;
 color: #063970;
  `

@@ -8,21 +8,26 @@ text-align: center;
 margin: 20px 0px;
 gap: 15px;
 text-decoration: none;
+`;
+
+export const Span = styled.span`
+font-size: 20px;
+color: #063970;
 `
 
 
 export const LinkP = styled(NavLink)`
-font-size: 18px;
+font-size: 20px;
 margin: 0;
 text-align: center; 
 text-decoration: none;
-color: #154c79;
+color: #063970;
 &:hover, 
  :focus {
-    color: #e28743;
+    color: #cce7e8;
 };
 
 &.active {
-    color: #e28743;
+    color: #cce7e8;
 }
 `

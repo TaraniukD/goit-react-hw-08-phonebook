@@ -7,9 +7,9 @@ import {useSelector, useDispatch } from 'react-redux';
 import { useEffect } from "react";
 import { fetchContacts } from "redux/contacts/contactsOperations";
 
-import { Div, H1, H2, P } from "./Phonebook.styled";
+import { Div, H1, H2, P } from "./AddContact.styled";
 
-export function Phonebook() {
+export function AddContacts() {
    
   const contacts = useSelector(state => state.contacts.contacts);
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ export function Phonebook() {
 
   return (
     <Div>
-      <H1>Phonebook</H1>
+      <H1>Сreate a contact</H1>
       <ContactForm />
       <H2>Contacts</H2>
       {contacts.length > 0 ?

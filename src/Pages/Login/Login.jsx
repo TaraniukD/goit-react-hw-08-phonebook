@@ -5,7 +5,7 @@ import authOperations from "redux/auth/auth-operations";
 
 import { Form, H2, Div, Label, Input, Button } from "./Login.styled"
 
-const initialValues = { email: "", password: "" };
+const initialValues = { email: "testdima123@ukr.net", password: "testDima123" };
 
 export const LoginForm = () => {
     const dispatch = useDispatch();

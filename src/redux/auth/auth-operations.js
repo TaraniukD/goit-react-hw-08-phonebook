@@ -12,13 +12,10 @@ const token = {
         }
     };
 
-    export const register = createAsyncThunk(
-        'auth/register',
+    export const register = createAsyncThunk('auth/register',
         async (credentials, thunkAPI) => {
           try {
             const { data } = await axios.post('/users/signup', credentials);
-            // After successful register, add the token to the HTTP header
-            console.log('success');
             token.set(data.token);
             return data;
           } catch (error) {
@@ -27,13 +24,14 @@ const token = {
         }
       );
 
-      export const logIn = createAsyncThunk('auth/login', async credentials => {
+      export const logIn = createAsyncThunk('auth/login', 
+      async (credentials, thunkAPI ) => {
         try {
           const { data } = await axios.post('users/login', credentials);
           token.set(data.token);
           return data;
         } catch (error) {
-         
+          return thunkAPI.rejectWithValue(error.message);
         }
       });
 

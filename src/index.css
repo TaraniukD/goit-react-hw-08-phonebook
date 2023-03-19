@@ -13,3 +13,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+html{
+  background: #808080;
+}
+#particles-js{
+ position: fixed;
+ z-index: 1;
+ left:0;
+ top:0;
+ width: 100vw;
+ height: 100vh;
+ background: linear-gradient(90deg,#F24645  ,#4F00BC );
+}

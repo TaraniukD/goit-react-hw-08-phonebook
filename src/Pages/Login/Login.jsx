@@ -1,15 +1,17 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import authOperations from "redux/auth/auth-operations";
+import {BsEyeSlash, BsEye} from 'react-icons/bs'
 
 
-import { Form, H2, Div, Label, Input, Button } from "./Login.styled"
+import { Form, H2, Div, Label, Input, Button, PasswordDiv } from "./Login.styled"
 
 const initialValues = { email: "testdima123@ukr.net", password: "testDima123" };
 
 export const LoginForm = () => {
     const dispatch = useDispatch();
     const [formValues, setFormValues] = useState(initialValues);
+    const [passwordShown, setPasswordShown] = useState(false);
 
     const handleChange = ({ target: {name, value }}) => {
     setFormValues({...formValues, [name]: value})
@@ -20,6 +22,9 @@ export const LoginForm = () => {
         setFormValues(initialValues);
     }
 
+    const togglePassword = () => {
+        setPasswordShown(!passwordShown);
+      };
   
      return  (
         <Form onSubmit={handleSubmit}>
@@ -42,7 +47,7 @@ export const LoginForm = () => {
             <Div>
             <Label htmlFor="password">Enter your password: </Label>
             <Input 
-            type="password" 
+            type={passwordShown ? "text" : "password"} 
             name="password"
             id="pass" 
             value={formValues.password}
@@ -51,6 +56,9 @@ export const LoginForm = () => {
             required
             onChange={handleChange}
             />
+            <PasswordDiv onClick={togglePassword} >
+             { passwordShown ? <BsEye /> : < BsEyeSlash  />}
+            </PasswordDiv>
             </Div>
             
             <Button type="submit">Login</Button>

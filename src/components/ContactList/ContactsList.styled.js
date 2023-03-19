@@ -7,7 +7,7 @@ padding: 8px;
 border: 1px solid gray;
 border-radius: 8px;
 padding: 20px;
-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); 
+box-shadow: 0px 5px 20px 8px rgba(0, 0, 0, 0.5); 
 `
 export const ListLi = styled.li`
 display: flex;

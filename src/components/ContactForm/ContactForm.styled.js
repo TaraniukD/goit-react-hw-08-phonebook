@@ -6,18 +6,19 @@ margin: 0 auto;
 width: 400px;
 border: 1px solid gray;
 border-radius: 8px;
-padding: 20px;
-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); 
+padding: 30px;
+box-shadow: 0px 5px 20px 8px rgba(0, 0, 0, 0.5); 
 `;
 
 export const Label = styled.label`
-font-size: 25px;
+margin-left: 40px;
+font-size: 22px;
 `;
 
 export const Fieldtyled = styled(Field)`
 display: block;
 min-width: 320px;
-margin-top: 20px;
+margin: 10px auto;
 margin-bottom: 10px;
 padding: 7px;
 border-radius: 5px;
@@ -29,18 +30,21 @@ box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
 `;
 
 export const Button = styled.button`
-padding: 10px;
+width: 140px;
+padding: 9px;
 margin-top: 30px;
-border: 1px solid #e28743;
+margin-left: 125px;
+background-color: #abdbe3;
+border: 1px solid #abdbe3;
 border-radius: 5px;
-cursor: pointer;
-background-color: #e28743;
 font-size: 18px;
+cursor: pointer;
+color: #154c79;
 &:hover,
-&:focus {
-    background-color: #eab676;
-    border: 1px solid #eab676;
-  }
+ :focus {
+    background-color:#76b5c5;
+    border: 1px solid #76b5c5;
+}
 `;
 
 export const ErrMessage = styled(ErrorMessage)`

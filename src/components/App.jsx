@@ -22,9 +22,12 @@ export function App() {
   }, [dispatch]);
 
   return (
+    <div id="particles-js">
+
     <Div>
       <Header />
-      <Routes>
+      <div style={{border: "1px solid #76b5c5", borderRadius: "8px", height: "2000px"}}>
+      <Routes >
         <Route path={PAGE_NAME.homepage} element={<Phonebook />} />
         <Route path={PAGE_NAME.favoriteContacts} element={<FavoriteContactList />} />
         <Route path={PAGE_NAME.register} element={<RegisterForm />} />
@@ -32,6 +35,8 @@ export function App() {
         <Route path={PAGE_NAME.error} element={<ErrorPage />} />
         <Route path="*" element={<Navigate to={PAGE_NAME.error} replace />} />
       </Routes>
+      </div>
     </Div>
+    </div>
   );
 };

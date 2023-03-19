@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const Div = styled.div`
 max-width: 1200px;
-margin: 30px auto;
+margin: 0 auto;
 color: #010101;
+
 `
 
 export const H1 = styled.h1`

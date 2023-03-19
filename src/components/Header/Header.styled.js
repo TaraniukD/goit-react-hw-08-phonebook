@@ -6,10 +6,10 @@ display: flex;
 align-items: center;
 justify-content: space-between;
 border: 1px solid #76b5c5;
-max-width: 1200px;
 margin: 0 auto;
 padding: 10px 20px;
 background-color: #e8f1f0;
+border-radius: 8px;
 `
 export const Nav = styled(NavLink)`
 display: flex;

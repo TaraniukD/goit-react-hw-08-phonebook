@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import authOperations from "redux/auth/auth-operations";
+import {BsEyeSlash, BsEye} from 'react-icons/bs'
 
-import { FormStyled, H2, Div, Label, Input, Button } from "./Register.styled"
+import { FormStyled, H2, Div, Label, Input, Button, PasswordDiv } from "./Register.styled"
 
 const initialValues = {
     name: '',
@@ -13,6 +14,7 @@ const initialValues = {
 export const RegisterForm = () => {
     const dispatch = useDispatch();
     const [formValues, setFormValues] = useState(initialValues);
+    const [passwordShown, setPasswordShown] = useState(false);
     
     const handleChange = ({ target: {name, value }}) => {
         setFormValues({...formValues, [name]: value})
@@ -24,7 +26,9 @@ export const RegisterForm = () => {
         setFormValues(initialValues);
         }
     
-        console.log({formValues})
+    const togglePassword = () => {
+        setPasswordShown(!passwordShown);
+        };
 
      return  (
             <FormStyled onSubmit={handleSubmit}>
@@ -57,7 +61,7 @@ export const RegisterForm = () => {
             <Div>
             <Label htmlFor="password">Enter your password:</Label>
             <Input 
-           type="password" 
+           type={passwordShown ? "text" : "password"}  
            name="password"
            id="password" 
            value={formValues.password}
@@ -66,9 +70,12 @@ export const RegisterForm = () => {
            required
            onChange={handleChange}
             />
+            <PasswordDiv onClick={togglePassword} >
+            { passwordShown ? <BsEye /> : < BsEyeSlash  />}
+           </PasswordDiv>
             </Div>
             
-            <Button type="submit">Register</Button>
+            <Button type="submit">Sign Up</Button>
             </FormStyled>
      )
 }

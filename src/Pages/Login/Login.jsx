@@ -1,36 +1,26 @@
-// import { useState } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import authOperations from "redux/auth/auth-operations";
 
 
 import { Form, H2, Div, Label, Input, Button } from "./Login.styled"
 
+const initialValues = { email: "", password: "" };
+
 export const LoginForm = () => {
     const dispatch = useDispatch();
-    // const [email, setEmail] = useState('');
-    // const [password, setPassword] = useState('');
+    const [formValues, setFormValues] = useState(initialValues);
 
-    // const handleChange = ({ target: {name, value }}) => {
-
-    // }
-    // const handleSubmit = e => {
-    //     e.preventDefault();
-    //     dispatch(authOperations.logIn({ email, password}));
-    //     setEmail('');
-    //     setPassword('');
-    // }
-
+    const handleChange = ({ target: {name, value }}) => {
+    setFormValues({...formValues, [name]: value})
+    }
     const handleSubmit = e => {
         e.preventDefault();
-
-        const form = e.target;
-        const email = form.email.value;
-        const password = form.password.value;
-
-        dispatch(authOperations.register({ email, password }));
-
-       form.reset();
+        dispatch(authOperations.logIn(formValues));
+        setFormValues(initialValues);
     }
+
+  
      return  (
         <Form onSubmit={handleSubmit}>
             <H2>Login</H2>            
@@ -40,10 +30,12 @@ export const LoginForm = () => {
             type="text"
             name="email" 
             id="email"
-            pattern=".+@\" 
+            value={formValues.email}
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
             size="30" 
             placeholder="email" 
             required
+            onChange={handleChange}
             /> 
             </Div> 
             
@@ -53,9 +45,11 @@ export const LoginForm = () => {
             type="password" 
             name="password"
             id="pass" 
+            value={formValues.password}
             minLength={6}
             placeholder="Password"
             required
+            onChange={handleChange}
             />
             </Div>
             

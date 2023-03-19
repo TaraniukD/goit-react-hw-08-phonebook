@@ -1,6 +1,6 @@
 
 // import { useLocalStorage } from "../hooks/Hooks";
-import React from "react";
+import React, { useEffect } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import { Header } from "./Header/Header";
 import { Phonebook } from "../Pages/Phonebook/Phonebook";
@@ -11,10 +11,15 @@ import { LoginForm } from "Pages/Login/Login";
 import { PAGE_NAME } from "router/paths";
 
 import { Div } from "./App.styled";
+import { useDispatch } from "react-redux";
+import { refreshUser } from "redux/auth/auth-operations";
 
 export function App() {
-   
- 
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
 
   return (
     <Div>

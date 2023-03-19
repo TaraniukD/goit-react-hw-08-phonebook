@@ -20,7 +20,7 @@ export const HeaderPage = () => {
             <IconContext.Provider value={{size: '30px',}}>
              <FcPhoneAndroid />
              </IconContext.Provider>
-             <Span> Youк favorite phone book</Span>
+             <Span> Your favorite phone book</Span>
             </Div>
             { isLoggedIn ? 
              <UserMenu /> :

@@ -23,10 +23,12 @@ export const PhoneBook = () => {
         return (
         <div>
             <Title>Phonebook</Title>
-            { isLoggedIn ? <><Phonebook />
+            { isLoggedIn ? 
+            <><Phonebook />
             <LinkBtn to={PAGE_NAME.addContact}>
             <Button >Add contact</Button> 
-            </LinkBtn></> : <HomeTittle /> }
+            </LinkBtn></> :
+             <HomeTittle /> }
             
         </div>
     )}

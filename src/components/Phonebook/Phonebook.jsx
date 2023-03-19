@@ -3,6 +3,7 @@ import {deleteContact} from 'redux/contacts/contactsOperations'
 import {useSelector, useDispatch} from 'react-redux';
 
 import { ListUl, ListLi, NameP, ListP, Button } from "./Phonebook.styled";
+import { ContactsTitle } from "components/HomeTittle/ContactsTitle";
 
 export const Phonebook = () => {
     
@@ -16,8 +17,8 @@ export const Phonebook = () => {
     );
 
     const contactsList = filterContacts(contacts, filter);
-
-    return (
+    return ( <>
+        { contactsList.length !== 0 ? 
         <ListUl>
             { 
             contactsList.map(({id, name, number}) => {
@@ -29,7 +30,8 @@ export const Phonebook = () => {
                     </ListLi>
                 )
             })}
-        </ListUl>
+        </ListUl> : <ContactsTitle /> }
+        </>
     )}
 
   

@@ -63,7 +63,7 @@ export const RegisterForm = () => {
             <Input 
            type={passwordShown ? "text" : "password"}  
            name="password"
-           id="password" 
+           id="pass" 
            value={formValues.password}
            minLength={6}
            placeholder="Password"

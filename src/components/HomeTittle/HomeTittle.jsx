@@ -1,5 +1,5 @@
-import { Div, P } from "./HomeTittle.styled";
-import { Link } from "react-router-dom";
+import { Div, P, Link } from "./HomeTittle.styled";
+
 import { PAGE_NAME } from "router/paths";
 
 export const HomeTittle = () => {

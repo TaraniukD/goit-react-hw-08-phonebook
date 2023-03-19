@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const Div = styled.div`
 text-align: center;
@@ -12,4 +13,11 @@ border-radius: 8px;
 
 export const P = styled.p `
 font-size: 25px;
+`
+export const Link = styled(NavLink)`
+color: #063970;
+&:hover, 
+ :focus {
+    color: #cce7e8;
+};
 `

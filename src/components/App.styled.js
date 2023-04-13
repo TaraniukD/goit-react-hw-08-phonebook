@@ -6,13 +6,12 @@ margin: 5px auto;
 `;
 export const Div = styled.div`
  padding: 10px 0;
- background: linear-gradient(90deg, #f67f7f  ,#9e62f2 );
 `;
 export const DivScreen = styled.div`
 margin-top: 10px;
 border: 1px solid #76b5c5;
  border-radius: 8px; 
- min-height: 675px;
+ min-height: 84vh;
  box-shadow: 0px 5px 20px 8px rgba(0, 0, 0, 0.5); 
 `
 export const H1 = styled.h1`

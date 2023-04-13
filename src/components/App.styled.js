@@ -5,19 +5,14 @@ max-width: 1200px;
 margin: 5px auto;
 `;
 export const Div = styled.div`
-position: fixed;
- z-index: 1;
- left:0;
- top:0;
- width: 100vw;
- height: 100vh;
+ padding: 10px 0;
  background: linear-gradient(90deg, #f67f7f  ,#9e62f2 );
 `;
 export const DivScreen = styled.div`
 margin-top: 10px;
 border: 1px solid #76b5c5;
  border-radius: 8px; 
- min-height: 800px;
+ min-height: 680px;
  box-shadow: 0px 5px 20px 8px rgba(0, 0, 0, 0.5); 
 `
 export const H1 = styled.h1`

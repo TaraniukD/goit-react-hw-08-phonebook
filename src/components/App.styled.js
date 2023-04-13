@@ -12,7 +12,7 @@ export const DivScreen = styled.div`
 margin-top: 10px;
 border: 1px solid #76b5c5;
  border-radius: 8px; 
- min-height: 680px;
+ min-height: 675px;
  box-shadow: 0px 5px 20px 8px rgba(0, 0, 0, 0.5); 
 `
 export const H1 = styled.h1`

@@ -1,26 +1,64 @@
 import styled from "styled-components";
 
 export const ListUl = styled.ul`
-width: 400px;
-margin: 20px auto;
-padding: 10px 30px;
+min-width: 200px;
+margin: 10px auto;
+padding: 7px 20px;
 border: 1px solid gray;
 border-radius: 8px;
 box-shadow: 0px 5px 20px 8px rgba(0, 0, 0, 0.5); 
+
+  @media screen and (min-width: 480px) and (max-width: 719px){
+min-width: 320px;
+padding: 8px 25px;
+margin: 15px auto;
+ }
+
+ @media screen and (min-width: 720px) {
+min-width: 520px;
+padding: 10px 30px;
+margin: 20px auto;
+ }
 `
 export const ListLi = styled.li`
 display: flex;
 align-items: center;
 justify-content: space-between;
+margin: 5px;
+
+  @media screen and (min-width: 480px) and (max-width: 719px){
+margin: 7px;
+  }
+ @media screen and (min-width: 720px) {
 margin: 8px;
-font-size: 22px;
+ }
 `
 export const NameP = styled.p`
 margin: 0;
+min-width: 75px;
+font-size: 15px;
+
+  @media screen and (min-width: 480px) and (max-width: 719px){
+min-width: 85px;
+font-size: 18px;
+  }
+
+ @media screen and (min-width: 720px) {
 min-width: 170px;
+font-size: 20px;
+ }
 `
 export const ListP = styled.p`
 margin: 0px;
+font-size: 15px;
+
+  @media screen and (min-width: 480px) and (max-width: 719px) {
+font-size: 18px;
+  }
+
+ @media screen and (min-width: 720px) {
+font-size: 20px;
+ }
 `
 export const IconButton = styled.button`
 border: 1px solid #e28743;

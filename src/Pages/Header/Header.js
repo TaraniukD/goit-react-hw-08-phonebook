@@ -17,8 +17,8 @@ export const HeaderPage = () => {
             {isLoggedIn && <LinkP to={PAGE_NAME.addContact}>Add contacts</LinkP>}  
             </Div>
             <Div >
-            <IconContext.Provider value={{size: '30px',}}>
-             <FcPhoneAndroid />
+            <IconContext.Provider value={{size: '30px'}}>
+                    <FcPhoneAndroid style={{ display: "block",  margin: "0 auto"}} />
              </IconContext.Provider>
              <Span> Your favorite phone book</Span>
             </Div>

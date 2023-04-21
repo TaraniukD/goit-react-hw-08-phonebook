@@ -3,8 +3,13 @@ import styled from "styled-components";
 
 export const Title = styled.h2`
 text-align: center;
-font-size: 50px;
-margin: 20px;
+font-size: 35px;
+
+margin-bottom: 50px;
+
+@media screen and (min-width: 480px) {
+font-size: 40px;
+ }
 `
 export const Button = styled.button`
 display: block;

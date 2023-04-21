@@ -29,12 +29,12 @@ font-size: 18px;
 `
 
 export const Input = styled.input`
-width: 300px;
+width: 200px;
 padding: 7px 10px;
 margin-top: 10px;
 border-radius: 5px;
 border: 1px solid #76b5c5;
-font-size: 20px;
+font-size: 16px;
 box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
 
 &:focus {
@@ -46,8 +46,17 @@ box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
 };
 &::placeholder {
     color: #154c79;
+    font-size: 15px;
+}
+
+@media screen and (min-width: 480px) {
+width: 300px;
+font-size: 20px;
+&::placeholder {
+    color: #154c79;
     font-size: 18px;
 }
+ }
 `
 export const Button = styled.button`
 width: 140px;

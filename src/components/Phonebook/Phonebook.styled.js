@@ -1,13 +1,24 @@
 import styled from "styled-components";
 
 export const ListUl = styled.ul`
-width: 600px;
-margin: 20px auto;
+min-width: 200px;
+margin: 10px auto;
 padding: 8px;
 border: 1px solid gray;
 border-radius: 8px;
 padding: 20px;
 box-shadow: 0px 5px 20px 8px rgba(0, 0, 0, 0.5); 
+
+  @media screen and (min-width: 480px) and (max-width: 719px){
+min-width: 320px;
+margin: 15px auto;
+ }
+
+ @media screen and (min-width: 720px) {
+min-width: 520px;
+max-width: 600px;
+margin: 20px auto;
+ }
 `
 export const ListLi = styled.li`
 display: flex;
@@ -21,11 +32,31 @@ border-radius: 5px;
 `
 export const NameP = styled.span`
 margin: 0;
+min-width: 75px;
+font-size: 15px;
+
+  @media screen and (min-width: 480px) and (max-width: 719px){
+min-width: 85px;
+font-size: 18px;
+  }
+
+ @media screen and (min-width: 720px) {
 min-width: 170px;
+font-size: 20px;
+ }
 `
 
 export const ListP = styled.p`
 margin: 0px;
+font-size: 15px;
+
+  @media screen and (min-width: 480px) and (max-width: 719px) {
+font-size: 18px;
+  }
+
+ @media screen and (min-width: 720px) {
+font-size: 20px;
+ }
 `
 
 export const Button = styled.button`
